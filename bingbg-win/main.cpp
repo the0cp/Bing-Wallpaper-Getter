@@ -81,7 +81,7 @@ int ApplyWallpaper(const char* szFileDir, int displayStyle)
 void get_pic_url()
 {
     TiXmlDocument doc;
-    const char* xmlFile = "C:\\Program Files\\The0d0re C00per\\Bing Backgrouds\\XML\\INDEX.xml";
+    const char* xmlFile = "C:\\Program Files\\Theodore Cooper\\Bing Backgrounds Getter\\XML\\INDEX.xml";
     if (doc.LoadFile(xmlFile))
     {
         cout << "Load file -----------------> DONE" << endl;
@@ -105,7 +105,7 @@ void get_pic_url()
     cout << "The address is:" << std::endl;
     cout << WebPictureFullpath << std::endl;
 
-    string pic_FolderPath = "C:\\Program Files\\The0d0re C00per\\Bing Backgrouds\\PIC";
+    string pic_FolderPath = "C:\\Program Files\\Theodore Cooper\\Bing Backgrounds Getter\\PIC";
     if (0 != _access(pic_FolderPath.c_str(), 0))
     {
         _mkdir(pic_FolderPath.c_str());
@@ -116,12 +116,12 @@ void get_pic_url()
     int nmlen0 = MultiByteToWideChar(CP_ACP, 0, pic_url.c_str(), len0 + 1, NULL, 0);
     wchar_t* buffer0 = new wchar_t[nmlen0];
     MultiByteToWideChar(CP_ACP, 0, pic_url.c_str(), len0 + 1, buffer0, nmlen0);
-    HRESULT hr0 = URLDownloadToFile(NULL, buffer0, _T("C:\\Program Files\\The0d0re C00per\\Bing Backgrouds\\PIC\\Today Wallpaper.png"), 0, NULL);
+    HRESULT hr0 = URLDownloadToFile(NULL, buffer0, _T("C:\\Program Files\\Theodore Cooper\\Bing Backgrounds Getter\\PIC\\Today Wallpaper.png"), 0, NULL);
     if (hr0 == S_OK)
     {
         cout << "Wallpaper Successfully Download!!!" << std::endl;
 
-        if (ApplyWallpaper("C:\\Program Files\\The0d0re C00per\\Bing Backgrouds\\PIC\\Today Wallpaper.png", 0))
+        if (ApplyWallpaper("C:\\Program Files\\Theodore Cooper\\Bing Backgrounds Getter\\PIC\\Today Wallpaper.png", 0))
         {
             std::cout << "Wallpaper Set!!" << std::endl;
             MessageBoxA(NULL, "Wallpaper Set!!", "Bing Backgrounds Getter", MB_OK);
@@ -144,7 +144,7 @@ void get_pic_url()
 int _tmain(int argc, char* argv[])
 {
     Stealth();
-    string xml_FolderPath = "C:\\Program Files\\The0d0re C00per\\Bing Backgrouds\\XML";
+    string xml_FolderPath = "C:\\Program Files\\Theodore Cooper\\Bing Backgrouds Getter Getter\\XML";
     if (0 != _access(xml_FolderPath.c_str(), 0))
     {
         _mkdir(xml_FolderPath.c_str());
@@ -154,7 +154,7 @@ int _tmain(int argc, char* argv[])
     int nmlen = MultiByteToWideChar(CP_ACP, 0, xml_url.c_str(), len + 1, NULL, 0);
     wchar_t* buffer = new wchar_t[nmlen];
     MultiByteToWideChar(CP_ACP, 0, xml_url.c_str(), len + 1, buffer, nmlen);
-    HRESULT hr = URLDownloadToFile(NULL, buffer, _T("C:\\Program Files\\The0d0re C00per\\Bing Backgrouds\\XML\\INDEX.xml"), 0, NULL);
+    HRESULT hr = URLDownloadToFile(NULL, buffer, _T("C:\\Program Files\\Theodore Cooper\\Bing Backgrouds Getter Getter\\XML\\INDEX.xml"), 0, NULL);
     if (hr == S_OK)
     {
         cout << "Download XML -----------------> DONE" << endl;
@@ -173,7 +173,7 @@ int _tmain(int argc, char* argv[])
 int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR pCmdLine, int nCmdShow)
 {
     Stealth();
-    string xml_FolderPath = "C:\\Program Files\\The0d0re C00per\\Bing Backgrouds\\XML";
+    string xml_FolderPath = "C:\\Program Files\\Theodore Cooper\\Bing Backgrounds Getter\\XML";
     if (0 != _access(xml_FolderPath.c_str(), 0))
     {
         _mkdir(xml_FolderPath.c_str());
@@ -183,10 +183,10 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR pCmdLin
     int nmlen = MultiByteToWideChar(CP_ACP, 0, xml_url.c_str(), len + 1, NULL, 0);
     wchar_t* buffer = new wchar_t[nmlen];
     MultiByteToWideChar(CP_ACP, 0, xml_url.c_str(), len + 1, buffer, nmlen);
-    HRESULT hr = URLDownloadToFile(NULL, buffer, _T("C:\\Program Files\\The0d0re C00per\\Bing Backgrouds\\XML\\INDEX.xml"), 0, NULL);
+    HRESULT hr = URLDownloadToFile(NULL, buffer, _T("C:\\Program Files\\Theodore Cooper\\Bing Backgrounds Getter\\XML\\INDEX.xml"), 0, NULL);
     if (hr == S_OK)
     {
-        cout << "Download XML -----------------> DONE" << endl;
+        //cout << "Download XML -----------------> DONE" << endl;
         get_pic_url();
     }
     else
